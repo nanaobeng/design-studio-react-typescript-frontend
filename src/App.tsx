@@ -20,7 +20,7 @@ interface IApp {
 const App:FC<IApp> = (props) => {
   
   const client = new ApolloClient({
-    uri: 'http://strngrdynamicserver-env.eba-ed36rpjc.us-east-1.elasticbeanstalk.com/graphql',
+    uri: API,
     cache: new InMemoryCache()
   });
   return(

@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@apollo/client": "^3.6.4",
+    "@aws-amplify/cli": "^8.3.1",
     "@ckeditor/ckeditor5-build-classic": "^34.0.0",
     "@ckeditor/ckeditor5-react": "^5.0.0",
     "@editorjs/editorjs": "^2.24.3",
