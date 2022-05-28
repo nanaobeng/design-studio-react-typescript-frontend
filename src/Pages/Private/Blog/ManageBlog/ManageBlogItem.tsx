@@ -58,13 +58,13 @@ const ManageBlogItem = () => {
                     <div className='row' style={{paddingLeft:'3%',paddingRight:'3%'}}>
 
 
-                        <div className='col-6'>
+                        <div className='col-lg-6 col-md-12 pb-2'>
                       
                             <TextInput label="Blog Title" placeholder="Blog Title..." onChange={(e)=> {setValues({...values, title: e.target.value})}} value={title} icon={<At size={14} />} />
                         </div>
 
 
-                        <div className='col-6'>
+                        <div className='col-lg-6 col-md-12 pb-2'>
                          <Select label="Blog Category" data={[{ value: 'Design', label: 'Design' },{ value: 'Art', label: 'Art' },{ value: 'Fashion', label: 'Fashion' },{ value: 'Photography', label: 'Photography' }]} onChange={setCategory} value={category}  />
                         </div>
 

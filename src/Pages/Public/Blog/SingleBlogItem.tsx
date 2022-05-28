@@ -3,7 +3,7 @@ import Layout from '../../../Components/Layout'
 import  {GET_BLOG_ITEM} from '../../../graphQL/queries'
 import { useQuery } from "@apollo/client";
 import {useParams} from 'react-router-dom'
-
+import { Spin } from 'antd';
 const SingleBlogItem = () => {
     let { id} = useParams();
     let blog_id:any = id
@@ -24,6 +24,8 @@ const SingleBlogItem = () => {
 
 </div>
 <div className='col-12' style={{paddingRight:'15%',paddingLeft:'15%'}}>
+
+    {data ? 
 <div className='row'>
                           <div className='col-lg-4 col-md-12'>
                               <div className='row'>
@@ -35,7 +37,8 @@ const SingleBlogItem = () => {
                     Author : {data && data.getBlog.author}<br/>
                     Category : {data && data.getBlog.category} <br/>
 
-                    {data && new Date(data.getBlog.timestamp).getMonth()}{data && `/${new Date(data.getBlog.timestamp).getFullYear()}`}
+                    {data && new Date(data.getBlog.timestamp).getMonth()}
+                    {data && `/${new Date(data.getBlog.timestamp).getFullYear()}`}
                     </span>
                 
                 </div>
@@ -51,6 +54,18 @@ const SingleBlogItem = () => {
                           
                           
                       </div>
+
+
+:
+<div className='row'>
+<div className='col-12  text-center'>
+                <Spin   >
+    
+  </Spin>
+        </div>
+        </div>
+
+    }
 </div>
             </div>
 

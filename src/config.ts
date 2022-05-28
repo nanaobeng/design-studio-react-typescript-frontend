@@ -1,0 +1,1 @@
+export const API = 'http://strngrdynamicserver-env.eba-ed36rpjc.us-east-1.elasticbeanstalk.com/graphql'

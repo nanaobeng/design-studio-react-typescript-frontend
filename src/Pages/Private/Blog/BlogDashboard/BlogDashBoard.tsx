@@ -49,11 +49,11 @@ const BlogDashBoard = () => {
 
                 <div className='col-12'>
                     <div className='row'>
-                        <div className='col-lg-6 col-md-12 p-4'>
+                        <div className='col-lg-6 p-4'>
                             <div className='row p-4'>
-                                <div className='col-12  shadow-lg' style={{height:'15vh',backgroundColor:'white',borderTopRightRadius:'1vh',borderTopLeftRadius:'1vh'}}>
+                                <div className='col-12 col-sm-12  shadow-lg' style={{height:'15vh',backgroundColor:'white'}}>
                                     <div className='row' >
-                                        <div className='col-12 p-2' style={{backgroundColor:'#DC002E',height:'4vh',borderTopRightRadius:'1vh',borderTopLeftRadius:'1vh',borderBottomRightRadius:'1vh',borderBottomLeftRadius:'1vh'}}>
+                                        <div className='col-12 p-2' style={{backgroundColor:'#DC002E',height:'4vh'}}>
                                             <span style={{color:'white',fontWeight:'bold',fontSize:'1.3vh'}}>Welcome,</span>
                                         </div>
                                         <div className='col-4  text-center' style={{paddingTop:'3vh',backgroundColor:"#eeee",height:'11vh'}}>
@@ -73,11 +73,11 @@ const BlogDashBoard = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className='col-lg-6 col-md-12 p-4'>
+                        <div className='col-lg-6 p-4'>
                             <div className='row p-4'>
-                                <div className='col-12  shadow-lg' style={{height:'15vh',backgroundColor:'white',borderTopRightRadius:'1vh',borderTopLeftRadius:'1vh'}}>
+                                <div className='col-12  shadow-lg' style={{height:'15vh',backgroundColor:'white'}}>
                                     <div className='row' >
-                                        <div className='col-12 p-2' style={{backgroundColor:'#DC002E',height:'4vh',borderTopRightRadius:'1vh',borderTopLeftRadius:'1vh',borderBottomRightRadius:'1vh',borderBottomLeftRadius:'1vh'}}>
+                                        <div className='col-12 p-2' style={{backgroundColor:'#DC002E',height:'4vh'}}>
                                             <span style={{color:'white',fontWeight:'bold',fontSize:'1.3vh'}}>Blogs</span>
                                         </div>
                                         <div className='col-4  text-center' style={{paddingTop:'3vh',backgroundColor:"#eeee",height:'11vh'}}>
@@ -110,10 +110,10 @@ const BlogDashBoard = () => {
                     <div className='row'>
                         <div className='col-12 p-4'>
                             <div className='row p-4'>
-                                <div className='col-12 shadow-lg' style={{minHeight:'30vh',backgroundColor:'white',borderTopRightRadius:'1vh',borderTopLeftRadius:'1vh'}}>
+                                <div className='col-12 shadow-lg' style={{minHeight:'30vh',backgroundColor:'white'}}>
 
                                     <div className='row'>
-                                        <div className='col-12 py-3 px-4' style={{backgroundColor:'#DC002E',borderTopRightRadius:'1vh',borderTopLeftRadius:'1vh',borderBottomRightRadius:'1vh',borderBottomLeftRadius:'1vh'}}>
+                                        <div className='col-12 py-3 px-4' style={{backgroundColor:'#DC002E'}}>
                                             <div className='row'>
                                                 <div className='col-8'>
                                                 <span  style={{color:'white',fontSize:'2vh',fontWeight:'bold'}}>Manage Blogs</span>

@@ -21,8 +21,8 @@ const SignIn = () => {
         setLoading(true)
         signInUser({
             variables: {
-                email: 'test1@test.com',
-                password:'test123'
+                email: email,
+                password:password
                 
               },
         })

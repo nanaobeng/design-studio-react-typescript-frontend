@@ -1,5 +1,5 @@
 import React,{FC} from 'react';
-import {BrowserRouter,Route,Routes} from 'react-router-dom'
+import {BrowserRouter,Route,Routes,Navigate} from 'react-router-dom'
 import './App.css';
 import CreateBlog from './Pages/Private/Blog/CreateBlog/CreateBlog';
 import BlogMainPage from './Pages/Public/Blog/BlogMainPage';
@@ -9,7 +9,9 @@ import ManageBlogItem from './Pages/Private/Blog/ManageBlog/ManageBlogItem';
 import SingleBlogItem from './Pages/Public/Blog/SingleBlogItem';
 import SignIn from './Pages/Private/Auth/SignIn';
 import 'antd/dist/antd.css';
-
+import PrivateWrapper from './Components/PrivateWrapper'
+import { isAuthenticated } from './Pages/Private/Auth/APIs'
+import {API} from './config'
 
 interface IApp {
 
@@ -18,7 +20,7 @@ interface IApp {
 const App:FC<IApp> = (props) => {
   
   const client = new ApolloClient({
-    uri: 'http://localhost:8080/graphql',
+    uri: API,
     cache: new InMemoryCache()
   });
   return(
@@ -28,12 +30,12 @@ const App:FC<IApp> = (props) => {
      <BrowserRouter>
     <Routes>
 
-      <Route path="/stories" element={<BlogMainPage/>} />
-      <Route path="/auth/signin" element={<SignIn/>} />
-      <Route path="/story/:id" element={<SingleBlogItem/>} />
+      <Route path="/strngr" element={<BlogMainPage/>} />
+      <Route  path="/auth/signin" element={ isAuthenticated() ? <PrivateWrapper><BlogDashBoard/></PrivateWrapper> : <SignIn/> } />
+
+      <Route path="/strngr/:id" element={<SingleBlogItem/>} />
       <Route path="/admin/create/blog" element={<CreateBlog/>} />
-      <Route path="/admin/manage/blogs" element={<BlogDashBoard/>} />
-      
+      <Route path="/admin/manage/blogs" element={(<PrivateWrapper><BlogDashBoard/></PrivateWrapper>)}/>
       <Route path="/admin/manage/blog/:id" element={<ManageBlogItem/>} />
     </Routes>
     </BrowserRouter>

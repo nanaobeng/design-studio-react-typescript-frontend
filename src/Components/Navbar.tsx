@@ -23,7 +23,7 @@ const NavbarLayout = () => {
     <Nav className="ml-auto" >
     <Nav.Link href="http://localhost:3001/about" style={{color:'black',fontWeight:'bold',fontFamily: "'Libre Baskerville', serif"}}>About</Nav.Link>
     <Nav.Link href="http://localhost:3001/" style={{color:'black',fontWeight:'bold',fontFamily: "'Libre Baskerville', serif"}}>Work</Nav.Link>
-    <Nav.Link href="/stories" style={{color:'black',fontWeight:'bold',fontFamily: "'Libre Baskerville', serif"}}>STRNGR</Nav.Link>
+    <Nav.Link href="/strngr" style={{color:'black',fontWeight:'bold',fontFamily: "'Libre Baskerville', serif"}}>STRNGR</Nav.Link>
 
     {validateUser &&
     <Nav.Link href="/admin/manage/blogs" style={{color:'black',fontWeight:'bold',fontFamily: "'Libre Baskerville', serif"}}>Dashboard</Nav.Link>

@@ -1,16 +1,17 @@
-import react from 'react'
+import {useState} from 'react'
 import { GET_ALL_BLOGS} from '../../../graphQL/queries'
 import { useQuery } from "@apollo/client";
 import {ExternalLink} from 'react-external-link'
+import { Spin } from 'antd';
 const BlogItems = () => {
     const { data , loading } = useQuery(GET_ALL_BLOGS);
-
+    const [visible, setVisible] = useState(false);
 
     return(
         <div className='col-lg-7 col-md-12'>
             <div className='row overflow-auto' style={{paddingTop:'10%',height:'70vh'}}>
 
-            {data && data.getAllBlogs.map((item:any,i:number)=>{
+            {data ?  (data.getAllBlogs).length > 0 ? data.getAllBlogs.map((item:any,i:number)=>{
                 let date = (new Date(item.timestamp).getMonth() < 10 ? `0${new Date(item.timestamp).getMonth()}` : new Date(item.timestamp).getDay()) + '/' + new Date(item.timestamp).getFullYear()
                 return(
                     <div className='col-12 py-4' key={i}>
@@ -33,7 +34,7 @@ const BlogItems = () => {
                            
                             </div>
                             <div className='col-2'>
-                                <ExternalLink href={`/story/${item.id}`} target="_self">
+                                <ExternalLink href={`/strngr/${item.id}`} target="_self">
 
                                
                             <a  style={{color:'black',fontWeight:'bold',fontSize:'1.7vh',fontFamily: "'Libre Baskerville', serif"}}>Read More</a>
@@ -47,7 +48,27 @@ const BlogItems = () => {
 
                     </div>
                 )
-            })}
+            })
+
+
+            : 
+
+
+            <div className='col-12'>
+                <span style={{fontWeight:'bold',fontSize:'2vh'}}>
+                    No content currently avaialble.
+                </span>
+
+            </div>
+        
+        :
+       
+        <div className='col-12 px-0 text-center'>
+                <Spin   >
+    
+  </Spin>
+        </div>
+    }
 
         </div>
         </div>
