@@ -12,6 +12,8 @@ import 'antd/dist/antd.css';
 import PrivateWrapper from './Components/PrivateWrapper'
 import { isAuthenticated } from './Pages/Private/Auth/APIs'
 import {API} from './config'
+import NotFoundPage from './Components/404/NotFoundPage';
+
 
 interface IApp {
 
@@ -31,12 +33,19 @@ const App:FC<IApp> = (props) => {
     <Routes>
 
       <Route path="/strngr" element={<BlogMainPage/>} />
+      {/* <Route path="/" element={()=> {
+        window.location.replace('https://example.com/1234'),
+        return null
+
+      }} />
+       */}
       <Route  path="/auth/signin" element={ isAuthenticated() ? <PrivateWrapper><BlogDashBoard/></PrivateWrapper> : <SignIn/> } />
 
       <Route path="/strngr/:id" element={<SingleBlogItem/>} />
       <Route path="/admin/create/blog" element={<CreateBlog/>} />
       <Route path="/admin/manage/blogs" element={(<PrivateWrapper><BlogDashBoard/></PrivateWrapper>)}/>
       <Route path="/admin/manage/blog/:id" element={<ManageBlogItem/>} />
+      <Route path="*" element={<NotFoundPage/>} />
     </Routes>
     </BrowserRouter>
 
